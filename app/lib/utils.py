@@ -4,12 +4,14 @@ import json
 import requests
 import hashlib
 
-from app import app
 from distutils.version import StrictVersion
 try:
     from urllib.parse import urlparse
 except ImportError:
     from urlparse import urlparse
+
+from .. import app
+
 
 if 'TIMEOUT' in list(app.config.keys()):
     TIMEOUT = app.config['TIMEOUT']

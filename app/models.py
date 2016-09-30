@@ -17,9 +17,10 @@ except ImportError:
 
 from flask_login import AnonymousUserMixin
 
-from app import app, db
-from app.lib import utils
-from app.lib.log import logger
+from . import app, db
+from .lib import utils
+from .lib.log import logger
+
 logging = logger('MODEL', app.config['LOG_LEVEL'], app.config['LOG_FILE']).config()
 
 if 'LDAP_TYPE' in list(app.config.keys()):

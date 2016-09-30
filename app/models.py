@@ -224,6 +224,7 @@ class User(db.Model):
         We will create a local user (in DB) in order to manage user
         profile such as name, roles,...
         """
+        self.password = '*'
         db.session.add(self)
         db.session.commit()
 

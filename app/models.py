@@ -5,6 +5,7 @@ import base64
 import bcrypt
 import itertools
 import traceback
+from py2casefold import casefold
 import pyotp
 
 from datetime import datetime
@@ -170,6 +171,7 @@ class User(db.Model):
                 logging.error('LDAP authentication is disabled')
                 return False
 
+            self.username = casefold(self.username)
             searchFilter = "(&(objectcategory=person)(samaccountname=%s))" % self.username
             if LDAP_TYPE == 'ldap':
               searchFilter = "(&(%s=%s)%s)" % (LDAP_USERNAMEFIELD, self.username, LDAP_FILTER)

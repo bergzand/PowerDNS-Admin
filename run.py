@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-from app import app
+from powerdns_admin import app
 from config import PORT
 
 try:

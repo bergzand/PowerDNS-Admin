@@ -3,8 +3,8 @@
 from migrate.versioning import api
 from config import SQLALCHEMY_DATABASE_URI
 from config import SQLALCHEMY_MIGRATE_REPO
-from app import db
-from app.models import Role, Setting
+from powerdns_admin import db
+from powerdns_admin.models import Role, Setting
 import os.path
 import time
 import sys

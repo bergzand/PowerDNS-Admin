@@ -49,4 +49,4 @@ def enable_github_oauth(GITHUB_ENABLE):
 oauth, github = enable_github_oauth(app.config.get('GITHUB_OAUTH_ENABLE'))
 
 
-from app import views, models
+from powerdns_admin import views, models
